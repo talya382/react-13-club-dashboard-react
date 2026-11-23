@@ -3,17 +3,41 @@
    Don't delete the classes marked "REQUIRED BY THE TESTS". */
 
 /* REQUIRED BY THE TESTS: the element that wraps all the cards */
+
+/* The element that wraps all the cards */
 .membersList {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* REQUIRED BY THE TESTS: list layout - one card under the other */
+/* List layout - one card under the other */
 .list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* REQUIRED BY THE TESTS: grid layout - cards in columns */
+/* Grid layout - cards in columns */
 .grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
-/* the message "No members to show" */
+/* The message "No members to show" */
 .empty {
+  text-align: center;
+  color: #777;
+  font-size: 18px;
+  padding: 30px;
 }
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
